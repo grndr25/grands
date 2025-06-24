@@ -66,27 +66,33 @@ header h1 {
 }
 
 /* Top nav buttons */
-.nav-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-buttons a {
+    flex: 1 1 30%;
+    text-align: center;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #76d1c4;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .nav-buttons a:hover {
+    background-color: #3a616d;
+    color: #a8f0e0;
+  }
 }
 
-.nav-buttons a {
-  background-color: transparent;
-  padding: 10px 20px;
-  border: none;
-  text-decoration: none;
-  color: #76d1c4;
-  font-weight: bold;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-buttons a:hover {
-  background-color: #3a616d;
-  color: #a8f0e0;
-}
 
 /* Main layout */
 .main-container {
