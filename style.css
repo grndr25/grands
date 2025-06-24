@@ -225,33 +225,25 @@ footer {
   }
 }
 /* === GRAND WELCOME SECTION STYLES === */
+
+/* === WELCOME SECTION FIXED POSITIONING === */
 .grand-welcome-section {
-  height: calc(100vh - 140px); /* Adjust for header/footer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 20px; /* Add horizontal padding for mobile */
-  box-sizing: border-box;
+  padding: 40px 20px 20px;
+  background-color: #508e8c;
   text-align: center;
-  background: transparent;
 }
 
 .grand-center-box {
   max-width: 800px;
-  width: 100%;
   margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 10px;
 }
 
 .grand-title {
   font-size: 36px;
   color: #a8f0e0;
-  letter-spacing: 1.5px;
-  line-height: 1.3;
   margin-bottom: 10px;
-  word-break: break-word;
-  white-space: normal;
+  letter-spacing: 1.5px;
 }
 
 .grand-subtitle {
@@ -259,28 +251,91 @@ footer {
   color: #e0fdfc;
 }
 
-/* === RESPONSIVE (unified) === */
-@media (max-width: 768px) {
-  .grand-center-box {
-    padding: 20px 15px;
-  }
+/* === SLIDESHOW === */
+.slideshow-container {
+  margin-top: 30px;
+  text-align: center;
+  min-height: 100px;
+}
 
-  .grand-title {
-    font-size: 26px;
-    letter-spacing: 1px;
-    line-height: 1.4;
-  }
+.slide {
+  display: none;
+  animation: fadeSlide 1s ease-in-out;
+}
 
-  .grand-subtitle {
-    font-size: 15px;
-  }
+.slide-text {
+  background-color: rgba(28, 45, 55, 0.85);
+  color: #e0fdfc;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Roman', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  display: inline-block;
+  max-width: 90%;
+}
 
-  .slide-text {
-    font-size: 14px;
-    padding: 12px 16px;
+/* DOTS */
+.dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #76d1c4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #a8f0e0;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-buttons {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .grand-title {
+    font-size: 28px;
+  }
+
+  .grand-subtitle {
+    font-size: 16px;
+  }
+
+  .slide-text {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+}
 
 /*SOCIALS*/
 
